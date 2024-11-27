@@ -1,5 +1,12 @@
 title: CRandom
 description: A random number generation implementation in C similar to the one found in standard C++
-output: docs/markdown
+output: docs
 files:
   - src/*.h
+groups:
+  - name: distributions
+    title: Distribution functions
+    description: Distribution functions
+  - name: xoshiro256ss
+    title: Xoshiro256**
+    description: Xoshiro256** random number generator

@@ -14,7 +14,7 @@ random_engine_t *xoshiro256ss_ctor_full(const uint64_t seed[4]) {
   if (!data) {
     return NULL;
   }
-  random_engine_t *engine = random_engine_ctor((const random_engine_spec_t *)&Xoshiro256ssEngine, data);
+  random_engine_t *engine = random_engine_ctor((random_engine_spec_t)&Xoshiro256ssEngine, data);
   if (!engine) {
     free(data);
     return NULL;
@@ -63,7 +63,7 @@ uint64_t xoshiro256ss_next(random_engine_t *engine) {
   return result;
 }
 
-const xoshiro256ss_spec_t Xoshiro256ssEngine = {
+const struct Xoshiro256ssSpec Xoshiro256ssEngine = {
     .name = "Xoshiro256**",
     .ctor = xoshiro256ss_ctor,
     .ctor_full = xoshiro256ss_ctor_full,

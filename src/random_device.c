@@ -14,7 +14,7 @@ random_engine_t * random_device_engine_ctor(void) {
   if (data == NULL) {
     return NULL;
   }
-  random_engine_t * engine = random_engine_ctor((const random_engine_spec_t *) &RandomDeviceEngine, data);
+  random_engine_t * engine = random_engine_ctor((random_engine_spec_t) &RandomDeviceEngine, data);
   return engine;
 }
 
@@ -30,7 +30,7 @@ uint64_t random_device_engine_next(random_engine_t *engine) {
   return result;
 }
 
-const random_engine_spec_t RandomDeviceEngine = {
+const struct RandomEngineSpec RandomDeviceEngine = {
     .name = "RandomDevice",
     .ctor = random_device_engine_ctor,
     .dtor = random_device_engine_dtor,

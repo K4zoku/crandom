@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 struct RandomEngine {
-    const random_engine_spec_t * spec;
+    const struct RandomEngineSpec * spec;
     void * data;
 };
 
-random_engine_t * random_engine_ctor(const random_engine_spec_t * spec, void * data) {
+random_engine_t * random_engine_ctor(random_engine_spec_t spec, void * data) {
     random_engine_t * engine = (random_engine_t *) malloc(sizeof(random_engine_t));
     engine->spec = spec;
     engine->data = data;
@@ -19,7 +19,7 @@ void random_engine_dtor(random_engine_t * engine) {
     free(engine);
 }
 
-const random_engine_spec_t * random_engine_get_spec(random_engine_t * engine) {
+random_engine_spec_t random_engine_get_spec(random_engine_t * engine) {
     return engine->spec;
 }
 

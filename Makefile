@@ -76,6 +76,8 @@ ifeq ($(DEBUG),1)
 	override CFLAGS += -g
 endif
 
+.PHONY: default clean compile docs clean_docs test memcheck clean_tests
+
 # Default target
 default: clean compile
 
@@ -94,12 +96,10 @@ $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(INC) $(CFLAGS) -c $< -o $@
 
 docs:
-	doxide build
-	doxygen doxygen.conf
+	@doxide build
 
 clean_docs:
-	doxide clean
-	rm -rf docs/man
+	@doxide clean
 
 test: compile $(TESTS_BIN)
 ifeq ($(OS),Windows_NT)
