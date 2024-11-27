@@ -20,9 +20,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    environment:
-      name: docs
-      url: https://k4zoku.github.io/crandom/
     permissions:
       contents: write
     steps:
