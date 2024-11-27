@@ -70,13 +70,16 @@ docs:
 clean_docs:
 	rm -rf docs
 
-test: compile clean_tests $(TESTS_BIN)
+test: compile $(TESTS_BIN)
 ifeq ($(OS),Windows_NT)
 	@cp $(LIB)/lib$(NAME).$(LIB_EXT) $(BIN)
 	$(foreach test, $(TESTS_BIN), $(test).exe;)
 else
-	$(foreach test, $(TESTS_BIN), valgrind $(test);)
+	$(foreach test, $(TESTS_BIN), $(test);)
 endif
+
+memcheck: compile $(TESTS_BIN)
+	$(foreach test, $(TESTS_BIN), valgrind $(test);)
 
 clean_tests:
 	rm -rf $(BIN)/test*
