@@ -41,6 +41,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: choco install gcc make
       - name: Build
         run: make
       - name: Test
