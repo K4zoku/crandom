@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Construct a random engine with 256 bits of seed data.Construct a random engine with a single 64-bit seed. *    The seed will be duplicated to fill the 256 bits of seed data.Construct a random engine with a random device.">
+        <meta name="description" content="Xoshiro256** random number generator">
       
       
       
-        <link rel="canonical" href="https://k4zoku.github.io/crandom/xoshiro256ss_spec_t/">
+        <link rel="canonical" href="https://k4zoku.github.io/crandom/xoshiro256ss/">
       
       
-        <link rel="prev" href="../random_engine_t/">
+        <link rel="prev" href="../distributions/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>xoshiro256ss_spec_t - CRandom</title>
+        <title>Xoshiro256** - CRandom</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="xoshiro256ss_spec_t - CRandom" >
+        <meta  property="og:title"  content="Xoshiro256** - CRandom" >
       
-        <meta  property="og:description"  content="Construct a random engine with 256 bits of seed data.Construct a random engine with a single 64-bit seed. *    The seed will be duplicated to fill the 256 bits of seed data.Construct a random engine with a random device." >
+        <meta  property="og:description"  content="Xoshiro256** random number generator" >
       
-        <meta  property="og:image"  content="https://k4zoku.github.io/crandom/assets/images/social/xoshiro256ss_spec_t.png" >
+        <meta  property="og:image"  content="https://k4zoku.github.io/crandom/assets/images/social/xoshiro256ss/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://k4zoku.github.io/crandom/xoshiro256ss_spec_t/" >
+        <meta  property="og:url"  content="https://k4zoku.github.io/crandom/xoshiro256ss/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="xoshiro256ss_spec_t - CRandom" >
+        <meta  name="twitter:title"  content="Xoshiro256** - CRandom" >
       
-        <meta  name="twitter:description"  content="Construct a random engine with 256 bits of seed data.Construct a random engine with a single 64-bit seed. *    The seed will be duplicated to fill the 256 bits of seed data.Construct a random engine with a random device." >
+        <meta  name="twitter:description"  content="Xoshiro256** random number generator" >
       
-        <meta  name="twitter:image"  content="https://k4zoku.github.io/crandom/assets/images/social/xoshiro256ss_spec_t.png" >
+        <meta  name="twitter:image"  content="https://k4zoku.github.io/crandom/assets/images/social/xoshiro256ss/index.png" >
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xoshiro256ss_spec_t" class="md-skip">
+        <a href="#xoshiro256" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              xoshiro256ss_spec_t
+              Xoshiro256**
             
           </span>
         </div>
@@ -149,9 +149,19 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -159,9 +169,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="cyan"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -219,7 +229,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
   </div>
   <div class="md-source__repository">
-    GitHub
+    k4zoku/crandom
   </div>
 </a>
       </div>
@@ -265,7 +275,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
   </div>
   <div class="md-source__repository">
-    GitHub
+    k4zoku/crandom
   </div>
 </a>
     </div>
@@ -376,27 +386,105 @@
       
   
   
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../distributions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Distributions
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Distributions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
       
         
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+          
         
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
-    xoshiro256ss_spec_t
+    Xoshiro256ss
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Xoshiro256ss
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -422,6 +510,92 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_ctor" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_ctor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_ctor_full" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_ctor_full
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_ctor_rd" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_ctor_rd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_ctor_seed" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_ctor_seed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_dtor" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_dtor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xoshiro256ss_next" class="md-nav__link">
+    <span class="md-ellipsis">
+      xoshiro256ss_next
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -438,30 +612,110 @@
   
 
 
-<h1 id="xoshiro256ss_spec_t">xoshiro256ss_spec_t<a class="headerlink" href="#xoshiro256ss_spec_t" title="Permanent link">&para;</a></h1>
-<p><strong>typedef struct Xoshiro256ssSpec xoshiro256ss_spec_t</strong></p>
-<p>Construct a random engine with 256 bits of seed data.</p>
+<h1 id="xoshiro256">Xoshiro256**<a class="headerlink" href="#xoshiro256" title="Permanent link">&para;</a></h1>
+<p>Xoshiro256** random number generator</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#xoshiro256ss_ctor">xoshiro256ss_ctor</a></td>
+<td>Construct a new xoshiro256** random number generator with a random seed generated from the default random device.</td>
+</tr>
+<tr>
+<td><a href="#xoshiro256ss_ctor_full">xoshiro256ss_ctor_full</a></td>
+<td>Construct a new xoshiro256** random number generator with a full 256-bit seed.</td>
+</tr>
+<tr>
+<td><a href="#xoshiro256ss_ctor_rd">xoshiro256ss_ctor_rd</a></td>
+<td>Construct a new xoshiro256** random number generator with a random seed generated from the given random device.</td>
+</tr>
+<tr>
+<td><a href="#xoshiro256ss_ctor_seed">xoshiro256ss_ctor_seed</a></td>
+<td>Construct a new xoshiro256** random number generator with a 64-bit seed.</td>
+</tr>
+<tr>
+<td><a href="#xoshiro256ss_dtor">xoshiro256ss_dtor</a></td>
+<td>Release the resources used by the xoshiro256** random number generator.</td>
+</tr>
+<tr>
+<td><a href="#xoshiro256ss_next">xoshiro256ss_next</a></td>
+<td>Generate the next random number from the xoshiro256** random number generator.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="xoshiro256ss_ctor">xoshiro256ss_ctor<a name="xoshiro256ss_ctor"></a><a class="headerlink" href="#xoshiro256ss_ctor" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">random_engine_t &#42;xoshiro256ss_ctor(void)</p>
+<p>Construct a new xoshiro256** random number generator with a random seed generated from the default random device.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>random_engine_t* The constructed random number generator.</dd>
+</dl>
+</div>
+<h3 id="xoshiro256ss_ctor_full">xoshiro256ss_ctor_full<a name="xoshiro256ss_ctor_full"></a><a class="headerlink" href="#xoshiro256ss_ctor_full" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">random_engine_t &#42;xoshiro256ss_ctor_full(const uint64_t seed[4])</p>
+<p>Construct a new xoshiro256** random number generator with a full 256-bit seed.</p>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>seed</code></dt>
-<dd>The seed to initialize the random engine with.</dd>
+<dd>The 256-bit seed.</dd>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
-<dd>
-<p>A pointer to the random engine instance.</p>
-<p>Construct a random engine with a single 64-bit seed.
-   *    The seed will be duplicated to fill the 256 bits of seed data.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>seed</code></dt>
-<dd>The seed to initialize the random engine with.</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
-<dd>
-<p>A pointer to the random engine instance.</p>
-<p>Construct a random engine with a random device.</p>
-</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>rd</code></dt>
-<dd>A pointer to the random device instance.</dd>
-<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
-<dd>A pointer to the random engine instance.</dd>
+<dd>random_engine_t* The constructed random number generator.</dd>
 </dl>
+</div>
+<h3 id="xoshiro256ss_ctor_rd">xoshiro256ss_ctor_rd<a name="xoshiro256ss_ctor_rd"></a><a class="headerlink" href="#xoshiro256ss_ctor_rd" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">random_engine_t &#42;xoshiro256ss_ctor_rd(random_device_t &#42;rd)</p>
+<p>Construct a new xoshiro256** random number generator with a random seed generated from the given random device.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>rd</code></dt>
+<dd>The random device.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>random_engine_t* The constructed random number generator.</dd>
+</dl>
+</div>
+<h3 id="xoshiro256ss_ctor_seed">xoshiro256ss_ctor_seed<a name="xoshiro256ss_ctor_seed"></a><a class="headerlink" href="#xoshiro256ss_ctor_seed" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">random_engine_t &#42;xoshiro256ss_ctor_seed(const uint64_t seed)</p>
+<p>Construct a new xoshiro256** random number generator with a 64-bit seed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The seed is expanded to a full 256-bit seed using the splitmix64 algorithm.</p>
+</div>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>seed</code></dt>
+<dd>The 64-bit seed.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>random_engine_t* The constructed random number generator.</dd>
+</dl>
+</div>
+<h3 id="xoshiro256ss_dtor">xoshiro256ss_dtor<a name="xoshiro256ss_dtor"></a><a class="headerlink" href="#xoshiro256ss_dtor" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">void xoshiro256ss_dtor(random_engine_t &#42;engine)</p>
+<p>Release the resources used by the xoshiro256** random number generator.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>The random number generator.</dd>
+</dl>
+</div>
+<h3 id="xoshiro256ss_next">xoshiro256ss_next<a name="xoshiro256ss_next"></a><a class="headerlink" href="#xoshiro256ss_next" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">uint64_t xoshiro256ss_next(random_engine_t &#42;engine)</p>
+<p>Generate the next random number from the xoshiro256** random number generator.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>The random number generator.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>uint64_t The next random number.</dd>
+</dl>
+</div>
 
 
 
@@ -494,7 +748,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../random_engine_t/" class="md-footer__link md-footer__link--prev" aria-label="Previous: random_engine_t">
+          <a href="../distributions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Distribution functions">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -504,7 +758,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                random_engine_t
+                Distribution functions
               </div>
             </div>
           </a>

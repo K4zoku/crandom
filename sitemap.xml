@@ -21,7 +21,11 @@
          <lastmod>2024-11-27</lastmod>
     </url>
     <url>
-         <loc>https://k4zoku.github.io/crandom/xoshiro256ss_spec_t/</loc>
+         <loc>https://k4zoku.github.io/crandom/distributions/</loc>
+         <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+         <loc>https://k4zoku.github.io/crandom/xoshiro256ss/</loc>
          <lastmod>2024-11-27</lastmod>
     </url>
 </urlset>

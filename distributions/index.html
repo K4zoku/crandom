@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Specification for the Xoshiro256** random engine.">
+        <meta name="description" content="Distribution functions">
       
       
       
-        <link rel="canonical" href="https://k4zoku.github.io/crandom/Xoshiro256ssSpec/">
+        <link rel="canonical" href="https://k4zoku.github.io/crandom/distributions/">
       
       
-        <link rel="prev" href="../RandomEngineSpec/">
+        <link rel="prev" href="../random_engine_t/">
       
       
-        <link rel="next" href="../random_device_t/">
+        <link rel="next" href="../xoshiro256ss/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Xoshiro256ssSpec - CRandom</title>
+        <title>Distribution functions - CRandom</title>
       
     
     
@@ -59,11 +59,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Xoshiro256ssSpec - CRandom" >
+        <meta  property="og:title"  content="Distribution functions - CRandom" >
       
-        <meta  property="og:description"  content="Specification for the Xoshiro256** random engine." >
+        <meta  property="og:description"  content="Distribution functions" >
       
-        <meta  property="og:image"  content="https://k4zoku.github.io/crandom/assets/images/social/Xoshiro256ssSpec.png" >
+        <meta  property="og:image"  content="https://k4zoku.github.io/crandom/assets/images/social/distributions/index.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +71,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://k4zoku.github.io/crandom/Xoshiro256ssSpec/" >
+        <meta  property="og:url"  content="https://k4zoku.github.io/crandom/distributions/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Xoshiro256ssSpec - CRandom" >
+        <meta  name="twitter:title"  content="Distribution functions - CRandom" >
       
-        <meta  name="twitter:description"  content="Specification for the Xoshiro256** random engine." >
+        <meta  name="twitter:description"  content="Distribution functions" >
       
-        <meta  name="twitter:image"  content="https://k4zoku.github.io/crandom/assets/images/social/Xoshiro256ssSpec.png" >
+        <meta  name="twitter:image"  content="https://k4zoku.github.io/crandom/assets/images/social/distributions/index.png" >
       
     
     
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xoshiro256ssspec" class="md-skip">
+        <a href="#distribution-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -138,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Xoshiro256ssSpec
+              Distribution functions
             
           </span>
         </div>
@@ -328,30 +328,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Xoshiro256ssSpec
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Xoshiro256ssSpec/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -360,113 +340,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variable-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variable Details
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variable Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#name" class="md-nav__link">
-    <span class="md-ellipsis">
-      name
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctor" class="md-nav__link">
-    <span class="md-ellipsis">
-      ctor
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
-    <span class="md-ellipsis">
-      next
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dtor" class="md-nav__link">
-    <span class="md-ellipsis">
-      dtor
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctor_full" class="md-nav__link">
-    <span class="md-ellipsis">
-      ctor_full
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctor_seed" class="md-nav__link">
-    <span class="md-ellipsis">
-      ctor_seed
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctor_rd" class="md-nav__link">
-    <span class="md-ellipsis">
-      ctor_rd
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -515,6 +388,8 @@
       
   
   
+    
+  
   
   
     
@@ -527,16 +402,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../distributions/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -548,7 +423,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Distributions
@@ -644,82 +519,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
+  <a href="#functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Variables
+      Functions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variable-details" class="md-nav__link">
+  <a href="#function-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Variable Details
+      Function Details
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Variable Details">
+    <nav class="md-nav" aria-label="Function Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#name" class="md-nav__link">
+  <a href="#bernoulli_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      name
+      bernoulli_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctor" class="md-nav__link">
+  <a href="#binomial_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      ctor
+      binomial_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
+  <a href="#discrete_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      next
+      discrete_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dtor" class="md-nav__link">
+  <a href="#normal_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      dtor
+      normal_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctor_full" class="md-nav__link">
+  <a href="#poisson_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      ctor_full
+      poisson_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctor_seed" class="md-nav__link">
+  <a href="#uniform_int_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      ctor_seed
+      uniform_int_distribution
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctor_rd" class="md-nav__link">
+  <a href="#uniform_real_distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      ctor_rd
+      uniform_real_distribution
     </span>
   </a>
   
@@ -748,15 +623,9 @@
   
 
 
-<h1 id="xoshiro256ssspec">Xoshiro256ssSpec<a class="headerlink" href="#xoshiro256ssspec" title="Permanent link">&para;</a></h1>
-<p><strong>struct Xoshiro256ssSpec</strong></p>
-<p>Specification for the Xoshiro256** random engine.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The first 4 fields is inherited from the <a href="../RandomEngineSpec/">RandomEngineSpec</a> structure.
-So this structure can be cast and used as a <a href="../RandomEngineSpec/">RandomEngineSpec</a>.</p>
-</div>
-<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<h1 id="distribution-functions">Distribution functions<a class="headerlink" href="#distribution-functions" title="Permanent link">&para;</a></h1>
+<p>Distribution functions</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -766,70 +635,140 @@ So this structure can be cast and used as a <a href="../RandomEngineSpec/">Rando
 </thead>
 <tbody>
 <tr>
-<td><a href="#name">name</a></td>
-<td>The name of the random engine.</td>
+<td><a href="#bernoulli_distribution">bernoulli_distribution</a></td>
+<td>Generate a random boolean value based on the given probability.</td>
 </tr>
 <tr>
-<td><a href="#ctor">ctor</a></td>
-<td>Constructor function to create an instance of Xoshiro256ss.</td>
+<td><a href="#binomial_distribution">binomial_distribution</a></td>
+<td>Generate a random value from a binomial distribution.</td>
 </tr>
 <tr>
-<td><a href="#next">next</a></td>
-<td>Function to generate the next random number in the engine.</td>
+<td><a href="#discrete_distribution">discrete_distribution</a></td>
+<td>Generate a random index based on a discrete probability distribution.</td>
 </tr>
 <tr>
-<td><a href="#dtor">dtor</a></td>
-<td>Function to release the memory allocated for data by Xoshiro256ss.</td>
+<td><a href="#normal_distribution">normal_distribution</a></td>
+<td>Generate a random value from a normal (Gaussian) distribution.</td>
 </tr>
 <tr>
-<td><a href="#ctor_full">ctor_full</a></td>
-<td>Constructor function with a full 256-bit seed.</td>
+<td><a href="#poisson_distribution">poisson_distribution</a></td>
+<td>Generate a random value from a Poisson distribution.</td>
 </tr>
 <tr>
-<td><a href="#ctor_seed">ctor_seed</a></td>
-<td>Constructor function with a single 64-bit seed.</td>
+<td><a href="#uniform_int_distribution">uniform_int_distribution</a></td>
+<td>Generate a random integer uniformly distributed in the range <code>[min, * max]</code>.</td>
 </tr>
 <tr>
-<td><a href="#ctor_rd">ctor_rd</a></td>
-<td>Constructor function with a random device.</td>
+<td><a href="#uniform_real_distribution">uniform_real_distribution</a></td>
+<td>Generate a random floating-point number uniformly distributed in the range <code>[min, max)</code>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="variable-details">Variable Details<a class="headerlink" href="#variable-details" title="Permanent link">&para;</a></h2>
-<h3 id="name">name<a name="name"></a><a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">const char &#42;name</p>
-<p>The name of the random engine. In this case, <code>Xoshiro256**</code>.</p>
+<h2 id="function-details">Function Details<a class="headerlink" href="#function-details" title="Permanent link">&para;</a></h2>
+<h3 id="bernoulli_distribution">bernoulli_distribution<a name="bernoulli_distribution"></a><a class="headerlink" href="#bernoulli_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">bool bernoulli_distribution(random_engine_t &#42;engine, double probability)</p>
+<p>Generate a random boolean value based on the given probability.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>probability</code></dt>
+<dd>The probability of returning <code>true</code> (between 0.0 and 1.0).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random boolean value (<code>true</code> with the specified probability).</dd>
+</dl>
 </div>
-<h3 id="ctor">ctor<a name="ctor"></a><a class="headerlink" href="#ctor" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">random_engine_ctor_fn ctor</p>
-<p>Constructor function to create an instance of Xoshiro256ss. <a href="../xoshiro256ss/#xoshiro256ss_ctor">xoshiro256ss_ctor</a></p>
+<h3 id="binomial_distribution">binomial_distribution<a name="binomial_distribution"></a><a class="headerlink" href="#binomial_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">uint64_t binomial_distribution(random_engine_t &#42;engine, uint64_t n, double p)</p>
+<p>Generate a random value from a binomial distribution.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>n</code></dt>
+<dd>The number of trials (must be &gt;= 0).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>p</code></dt>
+<dd>The probability of success in a single trial (range: [0.0, 1.0]).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random value representing the number of successes in the range [0,
+n].</dd>
+</dl>
 </div>
-<h3 id="next">next<a name="next"></a><a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">random_engine_next_fn next</p>
-<p>Function to generate the next random number in the engine. <a href="../xoshiro256ss/#xoshiro256ss_next">xoshiro256ss_next</a></p>
+<h3 id="discrete_distribution">discrete_distribution<a name="discrete_distribution"></a><a class="headerlink" href="#discrete_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">size_t discrete_distribution(random_engine_t &#42;engine, const double &#42;weights, size_t size)</p>
+<p>Generate a random index based on a discrete probability distribution.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>weights</code></dt>
+<dd>An array of probabilities for each index.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>size</code></dt>
+<dd>The number of elements in the weights array.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random index in the range [0, size-1], sampled according to the
+given probabilities.</dd>
+</dl>
 </div>
-<h3 id="dtor">dtor<a name="dtor"></a><a class="headerlink" href="#dtor" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">random_engine_data_dtor_fn dtor</p>
-<p>Function to release the memory allocated for data by Xoshiro256ss. <a href="../xoshiro256ss/#xoshiro256ss_dtor">xoshiro256ss_dtor</a></p>
+<h3 id="normal_distribution">normal_distribution<a name="normal_distribution"></a><a class="headerlink" href="#normal_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">double normal_distribution(random_engine_t &#42;engine, double mu, double sigma)</p>
+<p>Generate a random value from a normal (Gaussian) distribution.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>mu</code></dt>
+<dd>The mean of the distribution.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>sigma</code></dt>
+<dd>The standard deviation of the distribution.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random value sampled from the normal distribution, which
+theoretically ranges from -∞ to +∞.</dd>
+</dl>
 </div>
-<h3 id="ctor_full">ctor_full<a name="ctor_full"></a><a class="headerlink" href="#ctor_full" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">xoshiro256ss_ctor_full_fn ctor_full</p>
-<p>Constructor function with a full 256-bit seed. <a href="../xoshiro256ss/#xoshiro256ss_ctor_full">xoshiro256ss_ctor_full</a></p>
+<h3 id="poisson_distribution">poisson_distribution<a name="poisson_distribution"></a><a class="headerlink" href="#poisson_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">uint64_t poisson_distribution(random_engine_t &#42;engine, double lambda)</p>
+<p>Generate a random value from a Poisson distribution.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>lambda</code></dt>
+<dd>The mean of the Poisson distribution (must be &gt; 0).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random value representing the number of events in the range [0, ∞).</dd>
+</dl>
 </div>
-<h3 id="ctor_seed">ctor_seed<a name="ctor_seed"></a><a class="headerlink" href="#ctor_seed" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">xoshiro256ss_ctor_seed_fn ctor_seed</p>
-<p>Constructor function with a single 64-bit seed. <a href="../xoshiro256ss/#xoshiro256ss_ctor_seed">xoshiro256ss_ctor_seed</a></p>
+<h3 id="uniform_int_distribution">uniform_int_distribution<a name="uniform_int_distribution"></a><a class="headerlink" href="#uniform_int_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">int uniform_int_distribution(random_engine_t &#42;engine, int min, int max)</p>
+<p>Generate a random integer uniformly distributed in the range <code>[min,
+ * max]</code>.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>min</code></dt>
+<dd>The minimum value (inclusive).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>max</code></dt>
+<dd>The maximum value (inclusive).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random integer in the specified range.</dd>
+</dl>
 </div>
-<h3 id="ctor_rd">ctor_rd<a name="ctor_rd"></a><a class="headerlink" href="#ctor_rd" title="Permanent link">&para;</a></h3>
-<div class="admonition variable">
-<p class="admonition-title">xoshiro256ss_ctor_rd_fn ctor_rd</p>
-<p>Constructor function with a random device. <a href="../xoshiro256ss/#xoshiro256ss_ctor_rd">xoshiro256ss_ctor_rd</a></p>
+<h3 id="uniform_real_distribution">uniform_real_distribution<a name="uniform_real_distribution"></a><a class="headerlink" href="#uniform_real_distribution" title="Permanent link">&para;</a></h3>
+<div class="admonition function">
+<p class="admonition-title">double uniform_real_distribution(random_engine_t &#42;engine, double min, double max)</p>
+<p>Generate a random floating-point number uniformly distributed in the range <code>[min, max)</code>.</p>
+<dl>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>engine</code></dt>
+<dd>A pointer to the random engine.</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>min</code></dt>
+<dd>The minimum value (inclusive).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <code>max</code></dt>
+<dd>The maximum value (exclusive).</dd>
+<dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
+<dd>A random floating-point number in the specified range.</dd>
+</dl>
 </div>
 
 
@@ -863,7 +802,7 @@ So this structure can be cast and used as a <a href="../RandomEngineSpec/">Rando
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../RandomEngineSpec/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RandomEngineSpec">
+          <a href="../random_engine_t/" class="md-footer__link md-footer__link--prev" aria-label="Previous: random_engine_t">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -873,20 +812,20 @@ So this structure can be cast and used as a <a href="../RandomEngineSpec/">Rando
                 Previous
               </span>
               <div class="md-ellipsis">
-                RandomEngineSpec
+                random_engine_t
               </div>
             </div>
           </a>
         
         
           
-          <a href="../random_device_t/" class="md-footer__link md-footer__link--next" aria-label="Next: random_device_t">
+          <a href="../xoshiro256ss/" class="md-footer__link md-footer__link--next" aria-label="Next: Xoshiro256**">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                random_device_t
+                Xoshiro256**
               </div>
             </div>
             <div class="md-footer__button md-icon">
