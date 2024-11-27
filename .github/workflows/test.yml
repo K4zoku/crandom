@@ -43,7 +43,7 @@ jobs:
           packages: valgrind
           version: 1.0
       - name: Fix permissions
-        run: chmod +x dist/test/*
+        run: chmod -vR +x dist/unix/bin
       - name: Memcheck
         run: |
           make memcheck
