@@ -53,7 +53,6 @@ else
     endif
     ifeq ($(UNAME_S),Darwin)
         override CFLAGS += -D OSX
-        TEST_LDFLAGS += -Wl
     endif
     UNAME_P := $(shell uname -p)
     ifeq ($(UNAME_P),x86_64)
