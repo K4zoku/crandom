@@ -1,10 +1,9 @@
-#ifdef __unix__
+#ifndef _WIN32
 
 #include <stdio.h>
 #include <stdlib.h>
 
 #include <fcntl.h>
-#include <sys/types.h>
 #include <unistd.h>
 
 #include "crandom.h"
@@ -37,4 +36,4 @@ random_device_t *random_device_ctor(void) {
   return random_device_ctor_token("/dev/urandom");
 }
 
-#endif /* __unix__ */
+#endif /* _WIN32 */
