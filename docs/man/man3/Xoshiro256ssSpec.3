@@ -1,0 +1,113 @@
+.TH "Xoshiro256ssSpec" 3 "Version 1.0.0" "CRandom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Xoshiro256ssSpec \- Specification for the Xoshiro256** random engine\&. The first 4 fields is inherited from the \fBRandomEngineSpec\fP structure\&. So this structure can be cast and used as a \fBRandomEngineSpec\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <crandom\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "\fBrandom_engine_ctor_fn\fP \fBctor\fP"
+.br
+.ti -1c
+.RI "\fBrandom_engine_next_fn\fP \fBnext\fP"
+.br
+.ti -1c
+.RI "\fBrandom_engine_data_dtor_fn\fP \fBdtor\fP"
+.br
+.ti -1c
+.RI "\fBrandom_engine_t\fP *(* \fBctor_full\fP )(const uint64_t seed[4])"
+.br
+.RI "Construct a random engine with 256 bits of seed data\&. "
+.ti -1c
+.RI "\fBrandom_engine_t\fP *(* \fBctor_seed\fP )(uint64_t seed)"
+.br
+.RI "Construct a random engine with a single 64-bit seed\&. The seed will be duplicated to fill the 256 bits of seed data\&. "
+.ti -1c
+.RI "\fBrandom_engine_t\fP *(* \fBctor_rd\fP )(\fBrandom_device_t\fP *rd)"
+.br
+.RI "Construct a random engine with a random device\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specification for the Xoshiro256** random engine\&. The first 4 fields is inherited from the \fBRandomEngineSpec\fP structure\&. So this structure can be cast and used as a \fBRandomEngineSpec\fP\&. 
+
+
+.PP
+\fBSee also\fP
+.RS 4
+\fBRandomEngineSpec\fP 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBrandom_engine_ctor_fn\fP Xoshiro256ssSpec::ctor"
+
+.SS "\fBrandom_engine_t\fP *(* Xoshiro256ssSpec::ctor_full) (const uint64_t seed[4])"
+
+.PP
+Construct a random engine with 256 bits of seed data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The seed to initialize the random engine with\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the random engine instance\&. 
+.RE
+.PP
+
+.SS "\fBrandom_engine_t\fP *(* Xoshiro256ssSpec::ctor_rd) (\fBrandom_device_t\fP *rd)"
+
+.PP
+Construct a random engine with a random device\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrd\fP A pointer to the random device instance\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the random engine instance\&. 
+.RE
+.PP
+
+.SS "\fBrandom_engine_t\fP *(* Xoshiro256ssSpec::ctor_seed) (uint64_t seed)"
+
+.PP
+Construct a random engine with a single 64-bit seed\&. The seed will be duplicated to fill the 256 bits of seed data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIseed\fP The seed to initialize the random engine with\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the random engine instance\&. 
+.RE
+.PP
+
+.SS "\fBrandom_engine_data_dtor_fn\fP Xoshiro256ssSpec::dtor"
+
+.SS "const char* Xoshiro256ssSpec::name"
+
+.SS "\fBrandom_engine_next_fn\fP Xoshiro256ssSpec::next"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CRandom from the source code\&.

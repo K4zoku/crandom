@@ -1,0 +1,56 @@
+.TH "RandomEngineSpec" 3 "Version 1.0.0" "CRandom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RandomEngineSpec \- Random engine specification structure\&. Defines the behavior and functions used to interact with a custom random engine\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <crandom\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.RI "The name of the random engine\&. "
+.ti -1c
+.RI "\fBrandom_engine_ctor_fn\fP \fBctor\fP"
+.br
+.RI "Constructor function to create an instance of the random engine\&. "
+.ti -1c
+.RI "\fBrandom_engine_next_fn\fP \fBnext\fP"
+.br
+.RI "Function to generate the next random number in the engine\&. "
+.ti -1c
+.RI "\fBrandom_engine_data_dtor_fn\fP \fBdtor\fP"
+.br
+.RI "Function to release the memory allocated for data by the random engine\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Random engine specification structure\&. Defines the behavior and functions used to interact with a custom random engine\&. 
+.SH "Field Documentation"
+.PP 
+.SS "\fBrandom_engine_ctor_fn\fP RandomEngineSpec::ctor"
+
+.PP
+Constructor function to create an instance of the random engine\&. 
+.SS "\fBrandom_engine_data_dtor_fn\fP RandomEngineSpec::dtor"
+
+.PP
+Function to release the memory allocated for data by the random engine\&. 
+.SS "const char* RandomEngineSpec::name"
+
+.PP
+The name of the random engine\&. 
+.SS "\fBrandom_engine_next_fn\fP RandomEngineSpec::next"
+
+.PP
+Function to generate the next random number in the engine\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CRandom from the source code\&.

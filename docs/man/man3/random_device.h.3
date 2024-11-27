@@ -1,0 +1,46 @@
+.TH "src/random_device.h" 3 "Version 1.0.0" "CRandom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/random_device.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'crandom\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBH_RANDOM_DEVICE_INCLUDED\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrandom_engine_t\fP * \fBrandom_device_engine_ctor\fP (void)"
+.br
+.ti -1c
+.RI "uint64_t \fBrandom_device_engine_next\fP (\fBrandom_engine_t\fP *engine)"
+.br
+.ti -1c
+.RI "void \fBrandom_device_engine_dtor\fP (\fBrandom_engine_t\fP *engine)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define H_RANDOM_DEVICE_INCLUDED"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBrandom_engine_t\fP * random_device_engine_ctor (void )"
+
+.SS "void random_device_engine_dtor (\fBrandom_engine_t\fP * engine)"
+
+.SS "uint64_t random_device_engine_next (\fBrandom_engine_t\fP * engine)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CRandom from the source code\&.

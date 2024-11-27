@@ -1,0 +1,61 @@
+.TH "src/xoshiro256ss.h" 3 "Version 1.0.0" "CRandom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/xoshiro256ss.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'crandom\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBH_XOSHIRO256SS_INCLUDED\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrandom_engine_t\fP * \fBxoshiro256ss_ctor_full\fP (const uint64_t seed[4])"
+.br
+.ti -1c
+.RI "\fBrandom_engine_t\fP * \fBxoshiro256ss_ctor_seed\fP (const uint64_t seed)"
+.br
+.ti -1c
+.RI "\fBrandom_engine_t\fP * \fBxoshiro256ss_ctor_rd\fP (\fBrandom_device_t\fP *rd)"
+.br
+.ti -1c
+.RI "\fBrandom_engine_t\fP * \fBxoshiro256ss_ctor\fP (void)"
+.br
+.ti -1c
+.RI "uint64_t \fBxoshiro256ss_next\fP (\fBrandom_engine_t\fP *engine)"
+.br
+.ti -1c
+.RI "void \fBxoshiro256ss_dtor\fP (\fBrandom_engine_t\fP *engine)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define H_XOSHIRO256SS_INCLUDED"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBrandom_engine_t\fP * xoshiro256ss_ctor (void )"
+
+.SS "\fBrandom_engine_t\fP * xoshiro256ss_ctor_full (const uint64_t seed[4])"
+
+.SS "\fBrandom_engine_t\fP * xoshiro256ss_ctor_rd (\fBrandom_device_t\fP * rd)"
+
+.SS "\fBrandom_engine_t\fP * xoshiro256ss_ctor_seed (const uint64_t seed)"
+
+.SS "void xoshiro256ss_dtor (\fBrandom_engine_t\fP * engine)"
+
+.SS "uint64_t xoshiro256ss_next (\fBrandom_engine_t\fP * engine)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CRandom from the source code\&.
