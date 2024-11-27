@@ -94,10 +94,12 @@ $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(INC) $(CFLAGS) -c $< -o $@
 
 docs:
+	doxide build
 	doxygen doxygen.conf
 
 clean_docs:
-	rm -rf docs
+	doxide clean
+	rm -rf docs/man
 
 test: compile $(TESTS_BIN)
 ifeq ($(OS),Windows_NT)

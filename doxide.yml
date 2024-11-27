@@ -1,5 +1,5 @@
 title: CRandom
 description: A random number generation implementation in C similar to the one found in standard C++
-output: docs
+output: docs/markdown
 files:
   - src/*.h
