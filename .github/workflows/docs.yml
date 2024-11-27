@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/docs.yml"
-      - "docs/markdown/**"
+      - "docs/**"
       - "mkdocs.yml"
       - "doxide.yml"
   pull_request:
