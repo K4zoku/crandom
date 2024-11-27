@@ -38,3 +38,5 @@ jobs:
           clean: true
           folder: site
           target-folder: crandom
+          repository-name: k4zoku/K4zoku.github.io
+          branch: master
