@@ -1,0 +1,36 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/markdown/**"
+      - "mkdocs.yml"
+      - "doxide.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "docs/markdown/**"
+      - "mkdocs.yml"
+      - "doxide.yml"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    environment:
+      name: docs
+      url: https://k4zoku.github.io/crandom/
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Material for MkDocs
+        run: pip install mkdocs-material mkdocs-material[imaging]
+      - name: Build
+        run: mkdocs build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          folder: site
+          target-folder: crandom
