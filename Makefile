@@ -104,9 +104,6 @@ ifeq ($(OS),Windows_NT)
 	@cp $(LIB)/lib$(NAME).$(LIB_EXT) $(BIN)
 	$(foreach test, $(TESTS_BIN), $(test).exe;)
 else
-ifeq ($(UNAME_S),Darwin)
-    @cp $(LIB)/lib$(NAME).$(LIB_EXT) $(BIN)
-endif
 	$(foreach test, $(TESTS_BIN), $(test);)
 endif
 
