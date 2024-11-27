@@ -1,4 +1,3 @@
-CC := cc
 override CFLAGS += -O2 -Wall -Wextra -std=c99 -pedantic
 override LDFLAGS += -lm
 
@@ -24,18 +23,48 @@ TESTS_BIN = $(patsubst $(TEST)/%.c,$(BIN)/%,$(TESTS))
 TEST_LDFLAGS = -L$(LIB) -l$(NAME)
 
 # Platform-specific adjustments
+
 ifeq ($(OS),Windows_NT)
+    override CFLAGS += -D WIN32
     DIST := $(DIST)/win
     LIB_EXT := dll
     OBJECTS := $(filter-out $(OBJ)/%.posix.o, $(OBJECTS))
     override LDFLAGS += -Wl,--out-implib,$(LIB)/$(NAME).lib
     TEST_LDFLAGS += -static
+    ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
+        override CFLAGS += -D AMD64
+    else
+        ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
+            override CFLAGS += -D AMD64
+        endif
+        ifeq ($(PROCESSOR_ARCHITECTURE),x86)
+            override CFLAGS += -D IA32
+        endif
+    endif
 else
-    DIST := $(DIST)/unix
-    LIB_EXT := so
-    OBJECTS := $(filter-out $(OBJ)/%.win32.o, $(OBJECTS))
-    override CFLAGS += -fPIC
-    TEST_LDFLAGS += -Wl,-rpath=$(LIB)
+	DIST := $(DIST)/unix
+	LIB_EXT := so
+	OBJECTS := $(filter-out $(OBJ)/%.win32.o, $(OBJECTS))
+	override CFLAGS += -fPIC
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        override CFLAGS += -D LINUX
+        TEST_LDFLAGS += -Wl,-rpath=$(LIB)
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        override CFLAGS += -D OSX
+        TEST_LDFLAGS += -Wl,-install_name=$(LIB)
+    endif
+    UNAME_P := $(shell uname -p)
+    ifeq ($(UNAME_P),x86_64)
+        override CFLAGS += -D AMD64
+    endif
+    ifneq ($(filter %86,$(UNAME_P)),)
+        override CFLAGS += -D IA32
+    endif
+    ifneq ($(filter arm%,$(UNAME_P)),)
+        override CFLAGS += -D ARM
+    endif
 endif
 
 ifeq ($(COLORED_OUTPUT),1)
@@ -75,6 +104,9 @@ ifeq ($(OS),Windows_NT)
 	@cp $(LIB)/lib$(NAME).$(LIB_EXT) $(BIN)
 	$(foreach test, $(TESTS_BIN), $(test).exe;)
 else
+ifeq ($(UNAME_S),Darwin)
+    @cp $(LIB)/lib$(NAME).$(LIB_EXT) $(BIN)
+endif
 	$(foreach test, $(TESTS_BIN), $(test);)
 endif
 
