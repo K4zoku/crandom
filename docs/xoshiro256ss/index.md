@@ -9,12 +9,6 @@ generator: doxide
 
 Xoshiro256** random number generator
 
-## Types
-
-| Name | Description |
-| ---- | ----------- |
-| [Xoshiro256ssSpec](Xoshiro256ssSpec.md) | Specification for the Xoshiro256** random engine. |
-
 ## Functions
 
 | Name | Description |

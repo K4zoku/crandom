@@ -22,6 +22,7 @@ A random number generation implementation in C similar to the one found in stand
 | [random_device_t](random_device_t.md) | Random Device type. |
 | [random_engine_t](random_engine_t.md) | Random engine type. |
 | [RandomEngineSpec](RandomEngineSpec.md) | Random engine specification structure. |
+| [Xoshiro256ssSpec](Xoshiro256ssSpec.md) | Specification for the Xoshiro256** random engine. |
 
 ## Functions
 
