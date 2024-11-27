@@ -25,6 +25,7 @@ TEST_LDFLAGS = -L$(LIB) -l$(NAME)
 # Platform-specific adjustments
 
 ifeq ($(OS),Windows_NT)
+	override CC := gcc
     override CFLAGS += -D WIN32
     DIST := $(DIST)/win
     LIB_EXT := dll
