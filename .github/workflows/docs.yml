@@ -37,4 +37,3 @@ jobs:
         with:
           clean: true
           folder: site
-          target-folder: crandom
