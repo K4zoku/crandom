@@ -4,11 +4,13 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/test.yml"
       - "src/**"
       - "test/**"
   pull_request:
     branches: [main]
     paths:
+      - ".github/workflows/test.yml"
       - "src/**"
       - "test/**"
 
