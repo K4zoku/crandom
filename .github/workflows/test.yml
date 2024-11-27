@@ -43,6 +43,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: choco upgrade mingw make
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            C:\ProgramData\chocolatey\lib
+            C:\ProgramData\mingw64
       - name: Build
         run: make
       - name: Test
