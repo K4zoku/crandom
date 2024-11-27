@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: choco install gcc make
+        run: choco upgrade mingw make
       - name: Build
         run: make
       - name: Test
