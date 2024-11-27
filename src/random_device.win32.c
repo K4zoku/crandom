@@ -28,15 +28,15 @@ random_device_t *random_device_ctor_token(const char *token) {
 
 size_t random_device_read(random_device_t *instance, void *buffer,
                           size_t count) {
-  if (!CryptGenRandom(rd->hCryptProv, size, buffer)) {
+  if (!CryptGenRandom(instance->hCryptProv, count, buffer)) {
     return -1;
   }
-  return size;
+  return count;
 }
 
-void random_device_dtor(random_device_t *rd) {
-  CryptReleaseContext(rd->hCryptProv, 0);
-  free(rd);
+void random_device_dtor(random_device_t *instance) {
+  CryptReleaseContext(instance->hCryptProv, 0);
+  free(instance);
 }
 
 #endif /* _WIN32 */
