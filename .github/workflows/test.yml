@@ -41,16 +41,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/test.yml') }}
-          path: |
-            %LocalAppData%\Temp\chocolatey
-            C:\ProgramData\chocolatey\lib
-            C:\ProgramData\mingw64
-      - name: Install dependencies
-        run: choco upgrade mingw make
       - name: Build
         run: make
       - name: Test
