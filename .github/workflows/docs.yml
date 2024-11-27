@@ -4,12 +4,14 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/docs.yml"
       - "docs/markdown/**"
       - "mkdocs.yml"
       - "doxide.yml"
   pull_request:
     branches: [main]
     paths:
+      - ".github/workflows/docs.yml"
       - "docs/markdown/**"
       - "mkdocs.yml"
       - "doxide.yml"
@@ -21,6 +23,8 @@ jobs:
     environment:
       name: docs
       url: https://k4zoku.github.io/crandom/
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
       - name: Install Material for MkDocs
