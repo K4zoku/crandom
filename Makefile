@@ -1,3 +1,4 @@
+CC = gcc
 override CFLAGS += -O2 -Wall -Wextra -std=c99 -pedantic
 override LDFLAGS += -lm
 
@@ -25,7 +26,6 @@ TEST_LDFLAGS = -L$(LIB) -l$(NAME)
 # Platform-specific adjustments
 
 ifeq ($(OS),Windows_NT)
-	override CC := gcc
     override CFLAGS += -D WIN32
     DIST := $(DIST)/win
     LIB_EXT := dll
