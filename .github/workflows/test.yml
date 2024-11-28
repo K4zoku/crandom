@@ -77,7 +77,9 @@ jobs:
       - name: Checkout 🛒
         uses: actions/checkout@v2
       - name: Install dependencies 📦
-        run: brew install valgrind
+        run: |
+          brew tap LouisBrunner/valgrind
+          brew install --HEAD LouisBrunner/valgrind/valgrind
       - name: Download artifact 📥
         uses: actions/download-artifact@v4
         with:
