@@ -68,7 +68,7 @@ else
 endif
 
 ifeq ($(COLORED_OUTPUT),1)
-	override CFLAGS += -DCOLORED_OUTPUT=1
+	TEST_CFLAGS = -DCOLORED_OUTPUT=1
 endif
 
 # check if build for debug
@@ -117,4 +117,4 @@ clean_tests:
 
 $(BIN)/%: $(TEST)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(INC) $(CFLAGS) $< -o $@ $(LDFLAGS) $(TEST_LDFLAGS)
+	$(CC) $(INC) $(CFLAGS) $(TEST_CFLAGS) $< -o $@ $(LDFLAGS) $(TEST_LDFLAGS)
