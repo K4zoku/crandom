@@ -19,11 +19,14 @@ jobs:
     name: Linux Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Test
-        run: |
-          make test
-      - uses: actions/upload-artifact@v4
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+      - name: Build 🏗️
+        run: make
+      - name: Test 🧪
+        run: make test
+      - name: Upload artifact 📤
+        uses: actions/upload-artifact@v4
         with:
           name: linux-test
           path: dist/
@@ -33,39 +36,65 @@ jobs:
     name: Linux Memcheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v4
-        with:
-          name: linux-test
-          path: dist/
-      - uses: awalsh128/cache-apt-pkgs-action@latest
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: valgrind
           version: 1.0
-      - name: Fix permissions
+      - name: Download artifact 📥
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-test
+          path: dist/
+      - name: Fix permissions 🛠️
         run: chmod -vR +x dist/unix/bin
-      - name: Memcheck
-        run: |
-          make memcheck
+      - name: Memcheck 🧠
+        run: make memcheck
 
   macos-test:
     name: macOS Test
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+      - name: Build 🏗️
         run: make
-      - name: Test
-        run: |
-          make test
+      - name: Test 🧪
+        run: make test
+      - name: Upload artifact 📤
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-test
+          path: dist/
+
+  macos-memcheck:
+    name: macOS Memcheck
+    runs-on: macos-latest
+    needs: macos-test
+    steps:
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        run: brew install valgrind
+      - name: Download artifact 📥
+        uses: actions/download-artifact@v4
+        with:
+          name: macos-test
+          path: dist/
+      - name: Fix permissions 🛠️
+        run: chmod -vR +x dist/unix/bin
+      - name: Memcheck 🧠
+        run: make memcheck
 
   windows-test:
     name: Windows Test
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
+      - name: Checkout 🛒
+        uses: actions/checkout@v2
+      - name: Build 🏗️
         run: make
-      - name: Test
-        run: |
-          make test
+      - name: Test 🧪
+        run: make test
