@@ -15,9 +15,17 @@ on:
       - "test/**"
 
 jobs:
-  linux-test:
-    name: Linux Test
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - macos-13
+          - macos-14 # ARM
+          - windows-2022
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout 🛒
         uses: actions/checkout@v2
@@ -26,66 +34,33 @@ jobs:
       - name: Test 🧪
         run: make test
 
-  linux-memcheck:
-    name: Linux Memcheck
-    runs-on: ubuntu-latest
+  memcheck:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - macos-13
+        include:
+          - os: ubuntu-24.04
+          - os: macos-13
+    name: Memcheck on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout 🛒
         uses: actions/checkout@v2
       - name: Install dependencies 📦
+        if: matrix.os == 'ubuntu-24.04'
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: valgrind
           version: 1.0
+      - name: Install dependencies 📦
+        if: matrix.os == 'macos-13'
+        run: |
+          brew tap LouisBrunner/valgrind
+          brew install --HEAD LouisBrunner/valgrind/valgrind
       - name: Build 🏗️
         run: make
       - name: Memcheck 🧠
         run: make memcheck
-
-  macos-test:
-    name: macOS Test
-    runs-on: macos-latest
-    steps:
-      - name: Checkout 🛒
-        uses: actions/checkout@v2
-      - name: Build 🏗️
-        run: make
-      - name: Test 🧪
-        run: make test
-      # - name: Upload artifact 📤
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: macos-test
-      #     path: dist/
-
-  # macos-memcheck:
-  #   name: macOS Memcheck
-  #   runs-on: macos-latest
-  #   needs: macos-test
-  #   steps:
-  #     - name: Checkout 🛒
-  #       uses: actions/checkout@v2
-  #     - name: Install dependencies 📦
-  #       run: |
-  #         brew tap LouisBrunner/valgrind
-  #         brew install --HEAD LouisBrunner/valgrind/valgrind
-  #     - name: Download artifact 📥
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: macos-test
-  #         path: dist/
-  #     - name: Fix permissions 🛠️
-  #       run: chmod -vR +x dist/unix/bin
-  #     - name: Memcheck 🧠
-  #       run: make memcheck
-
-  windows-test:
-    name: Windows Test
-    runs-on: windows-latest
-    steps:
-      - name: Checkout 🛒
-        uses: actions/checkout@v2
-      - name: Build 🏗️
-        run: make
-      - name: Test 🧪
-        run: make test
